@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caption</title>
+    <title>{{Caption}}</title>
     <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
     <script>
         linkvertise(423568, {whitelist: [], blacklist: [""]});
@@ -97,13 +97,19 @@
         /* Responsive design for mobile view */
         @media (max-width: 768px) {
             .video-container {
-                flex-direction: column;
-                justify-content: space-between;
+                justify-content: center; /* Center the single video */
             }
 
             .video-container video {
-                width: 80%;
-                height: 30%;
+                width: 80%; /* Full width on mobile */
+                height: auto; /* Adjust height to maintain aspect ratio */
+                display: block; /* Display only one video */
+            }
+
+            /* Hide additional videos on mobile */
+            .video-container video:nth-of-type(2),
+            .video-container video:nth-of-type(3) {
+                display: none; /* Hide the other videos */
             }
 
             h1 {
@@ -141,7 +147,7 @@
     <!-- Main content -->
     <div class="content-container">
         <h1>Click Here</h1>
-        <a href="www.google.com" id="mainLink" class="linkvertise">CLICK HERE</a>
+        <a href="https://www.google.com" id="mainLink" class="linkvertise">CLICK HERE</a>
         <br>
     </div>
 
