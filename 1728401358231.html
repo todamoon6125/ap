@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{Caption}}</title>
+    <title>Click Here</title>
     <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
     <script>
         linkvertise(423568, {whitelist: [], blacklist: [""]});
@@ -97,19 +97,7 @@
         /* Responsive design for mobile view */
         @media (max-width: 768px) {
             .video-container {
-                justify-content: center; /* Center the single video */
-            }
-
-            .video-container video {
-                width: 80%; /* Full width on mobile */
-                height: auto; /* Adjust height to maintain aspect ratio */
-                display: block; /* Display only one video */
-            }
-
-            /* Hide additional videos on mobile */
-            .video-container video:nth-of-type(2),
-            .video-container video:nth-of-type(3) {
-                display: none; /* Hide the other videos */
+                display: none; /* Hide video container on mobile */
             }
 
             h1 {
@@ -131,15 +119,15 @@
     <!-- Video Background -->
     <div class="video-container">
         <video autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3629511/3629511-hd_720_900_24fps.mp4" type="video/mp4">
+            <source src="https://www.example.com/path-to-video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <video autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3629511/3629511-hd_720_900_24fps.mp4" type="video/mp4">
+            <source src="https://www.example.com/path-to-video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <video autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3629511/3629511-hd_720_900_24fps.mp4" type="video/mp4">
+            <source src="https://www.example.com/path-to-video3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
