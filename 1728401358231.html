@@ -37,7 +37,7 @@
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Center the video */
             align-items: center;
             z-index: -1; /* Ensure videos are behind the content */
         }
@@ -49,11 +49,6 @@
             border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
             transition: transform 0.3s ease;
-        }
-
-        /* Hover effect for video columns */
-        .video-container video:hover {
-            transform: scale(1.05);
         }
 
         /* Center content container */
@@ -97,7 +92,12 @@
         /* Responsive design for mobile view */
         @media (max-width: 768px) {
             .video-container {
-                display: none; /* Hide video container on mobile */
+                display: flex; /* Ensure the container is still displayed */
+            }
+
+            .video-container video {
+                width: 100%; /* Full width for the single video */
+                height: auto; /* Maintain aspect ratio */
             }
 
             h1 {
@@ -118,15 +118,7 @@
 <body>
     <!-- Video Background -->
     <div class="video-container">
-        <video autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3629511/3629511-hd_720_900_24fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/3629511/3629511-hd_720_900_24fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video autoplay muted loop>
+        <video autoplay muted loop class="background-video">
             <source src="https://videos.pexels.com/video-files/3629511/3629511-hd_720_900_24fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
