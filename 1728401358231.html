@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New paste</title>
+    <title>{{Caption}}</title>
     <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
     <script>
-        linkvertise(214547, {whitelist: [], blacklist: [""]});
+        linkvertise({{linkvertiseAccountID}}, {whitelist: [], blacklist: [""]});
     </script>
     <style>
         /* Reset margin and padding */
@@ -16,35 +16,56 @@
             box-sizing: border-box;
         }
 
-        /* Dark theme with background image */
+        /* Body with relative positioning for layering */
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('https://iili.io/d31GTa2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            overflow: hidden;
+            position: relative;
             color: #ffffff;
+            background-color: #000;
         }
 
-        /* Container for content with glassmorphism effect */
-        .content-container {
-            text-align: center;
-            margin: 20px;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(8px);
+        /* Video container */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: -1; /* Ensure videos are behind the content */
+        }
+
+        .video-container video {
+            width: 30%; /* Take up about a third of the screen for each */
+            height: 90%;
+            object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
             transition: transform 0.3s ease;
         }
 
-        /* Hover effect for the container */
-        .content-container:hover {
-            transform: translateY(-10px);
+        /* Hover effect for video columns */
+        .video-container video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Center content container */
+        .content-container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            position: relative;
         }
 
         h1 {
@@ -73,27 +94,18 @@
             box-shadow: 0px 10px 20px rgba(0, 123, 255, 0.7);
         }
 
-        /* Backup button with same design, different color */
-        .backup-button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            font-size: 18px;
-            color: #fff;
-            background: linear-gradient(135deg, #f44336 0%, #ff6f61 100%);
-            border-radius: 30px;
-            text-decoration: none;
-            transition: background 0.3s, box-shadow 0.3s;
-            box-shadow: 0px 5px 15px rgba(244, 67, 54, 0.4);
-        }
-
-        .backup-button:hover {
-            background: linear-gradient(135deg, #d32f2f 0%, #ff5252 100%);
-            box-shadow: 0px 10px 20px rgba(244, 67, 54, 0.7);
-        }
-
-        /* Media queries for responsiveness */
+        /* Responsive design for mobile view */
         @media (max-width: 768px) {
+            .video-container {
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .video-container video {
+                width: 80%;
+                height: 30%;
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -102,7 +114,7 @@
                 padding: 20px;
             }
 
-            .content-container a, .backup-button {
+            .content-container a {
                 font-size: 16px;
                 padding: 12px 20px;
             }
@@ -110,8 +122,25 @@
     </style>
 </head>
 <body>
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="https://www.pexels.com/video/an-elevated-highway-in-the-mountain-valley-in-hawaii-3629511/" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay muted loop>
+            <source src="https://www.pexels.com/video/an-elevated-highway-in-the-mountain-valley-in-hawaii-3629511/" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay muted loop>
+            <source src="https://www.pexels.com/video/an-elevated-highway-in-the-mountain-valley-in-hawaii-3629511/" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Main content -->
     <div class="content-container">
-        <h1>New paste</h1>
+        <h1>Click Here</h1>
         <a href="www.google.com" id="mainLink" class="linkvertise">CLICK HERE</a>
         <br>
     </div>
